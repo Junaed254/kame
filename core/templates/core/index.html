@@ -1,0 +1,95 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="home" id="home">
+
+    <div class="swiper home-slider">
+        <div class="swiper-wrapper">
+        {% for an in anime %}
+            <div class="swiper-slide">
+                <div class="box " style="background: url('{{ an.image.url }}') no-repeat;">
+                    <div class="content">
+                        <h3>{{an.title}}</h3>
+                        <p>{{an.description}}.</p>
+                        <a href="{% url 'anime_video' an.id %}" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+    </section>
+
+    <section class="anime" id="anime">
+    <h1 class="heading">Popular</h1>
+    <div class="swiper anime-slider">
+        <div class="swiper-wrapper">
+            {% for pop in popular %}
+            <div class="swiper-slide">
+                <div class="box" style="background: url('{{pop.image.url}}') no-repeat;"></div>
+                <div class="content">
+                    <h3>{{pop.title}}</h3>
+                    <p>{{pop.description}}</p>
+                    <a href="#" class="btn">Watch</a>
+                </div>
+            </div>
+             {% endfor %}
+        </div>
+    </div>
+    </section>
+
+    <section class="action" id="action">
+    <h1 class="heading">Action</h1>
+    <div class="swiper action-slider">
+        <div class="swiper-wrapper">
+            {% for ac in action %}
+                <div class="swiper-slide">
+                    <div class="box" style="background: url('{{ac.image.url}}') no-repeat;"></div>
+                    <div class="content">
+                        <h3>{{ac.title}}</h3>
+                        <p>{{ac.description}}</p>
+                        <a href="#" class="btn">Watch</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </section>
+
+    <section class="child" id="child">
+    <h1 class="heading">Kids</h1>
+    <div class="swiper child-slider">
+        <div class="swiper-wrapper">
+        {% for c in kids %}
+            <div class="swiper-slide">
+                <div class="box" style="background: url('{{c.image.url}}') no-repeat"></div>
+                <div class="content">
+                    <h3>{{c.title}}</h3>
+                    <p>{{c.description}}</p>
+                    <a href="#" class="btn">Watch</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </section>
+
+    <section class="family" id="family">
+    <h1 class="heading">Family</h1>
+    <div class="swiper family-slider">
+    <div class="swiper-wrapper">
+    {% for fam in family %}
+        <div class="swiper-slide">
+            <div class="box" style="background: url('{{fam.image.url}}') no-repeat"></div>
+            <div class="content">
+                <h3>{{fam.title}}</h3>
+                <p>{{fam.description}}</p>
+                <a href="#" class="btn">Watch</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+    </section>
+{% endblock %}

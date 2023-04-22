@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Watch - {{ anime.name }}{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
+{% endblock %}
+
+{% block content %}
+<div class="container-sm">{{anime.title}}</div>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-8">
+                {% if videos %}
+                <video poster="{{ anime.image.url }}" playsinline controls>
+                    {% for video in videos %}
+                        <source src="{{ video.video_file.url }}" type="video/mp4">
+                    {% endfor %}
+                </video>
+                {% else %}
+                <h2>The video is Unavailable</h2>
+                {% endif %}
+            </div>
+            <div class="col-md-4" style="background-color: #ffffff; padding: 20px;">
+             <h2 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">{{ videos.title }}</h2>
+            <p style="font-size: 16px; line-height: 1.5;">{{ anime.description }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_script %}
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <script>
+        const player = new Plyr('video');
+    </script>
+{% endblock %}
