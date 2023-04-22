@@ -29,6 +29,10 @@ Copy code
 python manage.py runserver
 3. Navigate to http://localhost:8000/ to access the application.
 
+### Screenshots
+[![image](https://www.linkpicture.com/q/1_1824.jpg)](https://www.linkpicture.com/view.php?img=LPic644424066a4dd1707046663)
+[![image](https://www.linkpicture.com/q/2_1332.jpg)](https://www.linkpicture.com/view.php?img=LPic64442459f1ff9602380965)
+
 ## Usage
 1. View the list of available anime shows by navigating to the homepage.
 2. Click on an anime to watch it.
